@@ -24,7 +24,7 @@ const Cart = () => {
         if (!state.cart.length) {
           getCart();
         }
-      }, [state.cart.length, dispatch]);
+    }, [state.cart.length, dispatch]);
 
     function toggleCart(){
         dispatch({ type: TOGGLE_CART });
@@ -56,7 +56,7 @@ const Cart = () => {
         if(data) {
             stripePromise.then((res)  => {
                 res.redirectToCheckout({ sessionId: data.checkout.session });
-            })
+            });
         }
     }, [data]);
 

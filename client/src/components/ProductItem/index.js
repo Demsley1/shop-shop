@@ -17,7 +17,10 @@ function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
   const { cart } = state;
   const addToCart = () => {
+    // find the cart item with the matching id
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+
+    // if there was a match, call UPDATE with a new purchase quantity
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
